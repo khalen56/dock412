@@ -1,0 +1,19 @@
+Options -MultiViews
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^details/(.*)$ /details.php?id=$1 [L]
+    RewriteRule ^nfo/(.*)$ /nfo.php?id=$1 [L]
+    RewriteRule ^download/([0-9]*)/$ /download.php?id=$1 [L]
+    RewriteRule ^dl/(.*)$ /dl.php?id=$1 [L]
+    RewriteRule ^delete/(.*)$ /delete.php?id=$1 [L]
+    RewriteRule ^login/$ /login.php [L]
+    RewriteRule ^logout/$ /logout.php [L]
+    RewriteRule ^downloads/$ /downloads.php [L]
+    RewriteRule ^seedbox/$ /seedbox.php [L]
+    RewriteRule ^suivi/$ /suivi.php [L]
+    RewriteRule ^top/today/$ /top/today.php [L]
+    RewriteRule ^top/week/$ /top/week.php [L]
+    RewriteRule ^top/month/$ /top/month.php [L]
+</IfModule>
