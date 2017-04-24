@@ -18,3 +18,4 @@ docker run -it \
     -d \
     dock412
 ```
+* Se rendre sur le /setup.php depuis un navigateur pour créer la base de données
