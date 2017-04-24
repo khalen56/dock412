@@ -6,7 +6,8 @@
 * Construire l'image : `docker build . -t dock412`
 * Lancer l'image :
 
-    docker run -it \
+```
+docker run -it \
     --restart always \
     --link mariadb:mysql \
     -e "T411_DOMAIN=le_domaine_pour_l_application" \
@@ -16,3 +17,4 @@
     --name t412 \
     -d \
     dock412
+```
