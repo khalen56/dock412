@@ -2,7 +2,7 @@
 
 ## Installation
 
-* Déployer une image mariadb : `docker run --name mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=t412 -d mariadb:latest`
+* Déployer une image mariadb : `docker run --name mariadb -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=t412 -d mariadb:latest`
 * Construire l'image : `docker build . -t dock412`
 * Lancer l'image :
 
