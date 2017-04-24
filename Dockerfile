@@ -4,17 +4,14 @@ MAINTAINER GLedoussal <contact@gwendal-ledoussal.fr>
 
 WORKDIR /tmp
 
-# Installing wget
-RUN apt-get update && apt-get install -y wget
-
-# Adding dotdeb mirror (Up to date php & apache2)
-RUN echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list && \
+# Adding dotdeb mirror (Up to date php & apache2) and install packages
+RUN apt-get update && \
+apt-get install -q -y wget && \
+echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list && \
 echo "deb-src http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list.d/dotdeb.list && \
 wget https://www.dotdeb.org/dotdeb.gpg && \
-apt-key add dotdeb.gpg -y
-
-# Installing packages
-RUN apt-get update && \
+apt-key add dotdeb.gpg -y && \
+apt-get update && \
 apt-get install -q -y \
 git \
 curl \
@@ -26,7 +23,8 @@ php7.0-curl \
 php7.0-mcrypt \
 php7.0-zip \
 php7.0-mbstring \
-php7.0-xml
+php7.0-xml && \
+apt-get clean
 
 # Apache config
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
