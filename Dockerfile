@@ -24,6 +24,7 @@ php7.0-mcrypt \
 php7.0-zip \
 php7.0-mbstring \
 php7.0-xml && \
+apt-get autoremove -y && \
 apt-get clean
 
 # Apache config
